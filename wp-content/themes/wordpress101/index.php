@@ -1,6 +1,6 @@
 
 <?php get_header(); ?>
 
-<?php get_search_form(); ?>
+This is the Main Content.
 
 <?php get_footer(); ?>
