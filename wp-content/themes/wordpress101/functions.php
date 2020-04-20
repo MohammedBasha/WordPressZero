@@ -28,7 +28,21 @@ function add_custom_style() {
 
 function add_custom_script() {
 
-	// Adding the Jquery as a dependency for the Bootstrap but in the header
+	// Remove the registered jquery old version first
+	wp_deregister_script('jquery');
+
+	// Then register the wanted version in the footer
+	wp_register_script(
+		'jquery',
+		includes_url('/js/jquery/jquery.js'),
+		array(),
+		false,
+		true);
+
+	// Enqueue the new registered jQuery
+	wp_enqueue_script('jquery');
+
+	// Adding the Jquery as a dependency for the Bootstrap but in the head
 	wp_enqueue_script(
 		'bootstrap-script',
 		get_template_directory_uri() . '/js/bootstrap.min.js',
