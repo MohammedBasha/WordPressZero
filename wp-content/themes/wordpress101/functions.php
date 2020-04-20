@@ -27,10 +27,12 @@ function add_custom_style() {
 */
 
 function add_custom_script() {
+
+	// Adding the Jquery as a dependency for the Bootstrap but in the header
 	wp_enqueue_script(
 		'bootstrap-script',
 		get_template_directory_uri() . '/js/bootstrap.min.js',
-		array(),
+		array('jquery'),
 		false,
 		true
 	);
