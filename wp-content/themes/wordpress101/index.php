@@ -1,6 +1,7 @@
 
+
 <?php get_header(); ?>
 
-This is the Main Content.
+<h1>This is the Main Content.</h1>
 
 <?php get_footer(); ?>
