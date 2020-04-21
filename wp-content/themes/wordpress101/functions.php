@@ -89,4 +89,29 @@ function add_custom_script() {
 add_action('wp_enqueue_scripts', 'add_custom_style');
 add_action('wp_enqueue_scripts', 'add_custom_script');
 
+
+/*
+** Register a custom menu function
+*/
+
+function register_custom_menu() {
+	register_nav_menu('bootstrap-menu', __('Navigation Bar'));
+}
+
+/*
+** Adding the registered custom menu
+*/
+
+add_action('init', 'register_custom_menu');
+
+/*
+** Create a function to print the  custom menu
+*/
+
+
+function add_custom_menu() {
+	wp_nav_menu();
+}
+
+
 ?>
