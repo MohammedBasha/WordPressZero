@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+require_once 'wp-bootstrap-navwalker.php';
 
 /*
 ** Adding the custom style
@@ -95,7 +97,10 @@ add_action('wp_enqueue_scripts', 'add_custom_script');
 */
 
 function register_custom_menu() {
-	register_nav_menu('bootstrap-menu', __('Navigation Bar'));
+	register_nav_menus(array(
+		'bootstrap-menu' => 'Navigation Bar Location',
+		'footer-menu' => 'Footer Bar Location'
+	));
 }
 
 /*
@@ -110,7 +115,14 @@ add_action('init', 'register_custom_menu');
 
 
 function add_custom_menu() {
-	wp_nav_menu();
+	wp_nav_menu(array(
+		'theme_location' => 'bootstrap-menu',
+		'container_class' => 'collapse navbar-collapse',
+		'container_id' => 'main-nav',
+		'menu_class' => 'nav navbar-nav navbar-right',
+		'depth' => 2,
+		'walker' => new WP_Bootstrap_Navwalker()
+	));
 }
 
 
