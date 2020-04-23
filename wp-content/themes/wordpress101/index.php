@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="main-post">
-				<h3 class="post-title">POst Title</h3>
+				<h3 class="post-title">Post Title</h3>
 				<div class="post-info">
 					<span class="post-author">Author</span>
 					<span class="post-date">Date</span>

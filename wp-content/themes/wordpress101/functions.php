@@ -1,13 +1,17 @@
 <?php
 
-require_once 'wp-bootstrap-navwalker.php';
+// Include the Bootstrap Nav Walker Class
+require_once 'class-wp-bootstrap-navwalker.php';
+
+// Adding the support to featured image
+add_theme_support('post-thumbnails');
 
 /*
 ** Adding the custom style
 */
 
 function add_custom_style() {
-	// Adding the Bootstrap css file
+	// Adding the Bootstrap 4 css file
 	wp_enqueue_style(
 		'bootstrap-css',
 		get_template_directory_uri() . '/css/bootstrap.min.css'
@@ -119,7 +123,7 @@ function add_custom_menu() {
 		'theme_location' => 'bootstrap-menu',
 		'container_class' => 'collapse navbar-collapse',
 		'container_id' => 'main-nav',
-		'menu_class' => 'nav navbar-nav navbar-right',
+		'menu_class' => 'navbar-nav ml-auto',
 		'depth' => 2,
 		'walker' => new WP_Bootstrap_Navwalker()
 	));

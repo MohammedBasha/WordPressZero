@@ -8,22 +8,19 @@
 	</head>
 	<body>
 		<h1>From Header</h1>
-		
-		<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-    </div>
 
-    <?php add_custom_menu(); ?>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <div class="container">
+			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+				<?php bloginfo('name'); ?>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-  </div><!-- /.container -->
-</nav>
+			<?php add_custom_menu(); ?>
+
+		  </div>
+		</nav>
 
 
