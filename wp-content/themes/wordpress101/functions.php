@@ -130,7 +130,7 @@ function add_custom_menu() {
 }
 
 /*
-** Create a function to limit the excerpt length
+** Create a function to limit the excerpt length && dots
 */
 
 function custom_excerpt_length($length) {
@@ -138,6 +138,12 @@ function custom_excerpt_length($length) {
 }
 
 add_filter('excerpt_length', 'custom_excerpt_length');
+
+function custom_excerpt_dots($more) {
+	return ' ...';
+}
+
+add_filter('excerpt_more', 'custom_excerpt_dots');
 
 
 ?>
