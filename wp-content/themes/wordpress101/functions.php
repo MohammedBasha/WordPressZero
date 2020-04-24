@@ -129,5 +129,15 @@ function add_custom_menu() {
 	));
 }
 
+/*
+** Create a function to limit the excerpt length
+*/
+
+function custom_excerpt_length($length) {
+	return 10;
+}
+
+add_filter('excerpt_length', 'custom_excerpt_length');
+
 
 ?>
