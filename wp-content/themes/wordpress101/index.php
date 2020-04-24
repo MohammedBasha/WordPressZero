@@ -50,8 +50,12 @@
 							</a>
 							<p class="post-desc">
 								<?php
-									the_content('Continue reading ' . get_the_title());
+									//the_content('Continue reading ' . get_the_title());
+									the_excerpt();
 								?>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_title('Read '); ?>
+								</a>
 							</p>
 							<hr />
 							<p class="post-categories">
