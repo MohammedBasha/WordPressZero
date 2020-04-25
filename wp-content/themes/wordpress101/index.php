@@ -90,7 +90,7 @@
 						previous_posts_link(
 							'
 								<i class="fa fa-3 fa-chevron-left" aria-hidden="true"></i>
-								 Previous Page
+								<span> Previous Page</span>
 							'
 						);
 					} else {
@@ -103,7 +103,7 @@
 					if (get_next_posts_link()) {
 						next_posts_link(
 							'
-								Next Page 
+								<span>Next Page </span>
 								<i class="fa fa-3 fa-chevron-right" aria-hidden="true"></i>
 							'
 						);

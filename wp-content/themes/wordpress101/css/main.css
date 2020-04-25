@@ -6,6 +6,18 @@
 
 /* End Styling Main Content Section */
 
+/* Start Styling Post Section */
+
+.prev-link a {
+	color: inherit;
+}
+
+.prev-link a:hover {
+	text-decoration: underline;
+}
+
+/* End Styling Post Section */
+
 /* Start Styling Footer Section */
 
 .footer {

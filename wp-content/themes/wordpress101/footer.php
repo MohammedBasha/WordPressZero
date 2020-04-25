@@ -1,6 +1,6 @@
 
 		<div class="footer text-center">
-			Copyrights reserved @MB 2020.
+			Copyrights reserved &copy; <?php echo date('Y') . ' '; bloginfo('name') ?>.
 		</div>
 		<?php wp_footer(); ?>
 	</body>
