@@ -20,6 +20,9 @@
 									</a>
 								</h3>
 
+								<!-- Edit the post Link -->
+								<?php edit_post_link('Edit <i class="fa fa-pencil" aria-hidden="true"></i>'); ?>
+
 								<div class="post-info">
 									<span class="post-author">
 										<i class="fa fa-user" aria-hidden="true"></i>
@@ -80,6 +83,32 @@
 
 
 			?>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 prev-link">
+				<?php
+					if (get_previous_post_link()) {
+						previous_post_link(
+							'%link',
+							'<i class="fa fa-3 fa-chevron-left" aria-hidden="true"></i> Previous Post: %title'
+						);
+					} else {
+						echo 'No Previous Post';
+					}
+				?>
+			</div>
+			<div class="col-sm-6 text-right prev-link">
+				<?php
+					if (get_next_post_link()) {
+						next_post_link(
+							'%link',
+							'Next Post: %title <i class="fa fa-3 fa-chevron-right" aria-hidden="true"></i>'
+						);
+					} else {
+						echo 'No Next Post';
+					}
+				?>
+			</div>
 		</div>
 	</div>
 </div>
