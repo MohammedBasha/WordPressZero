@@ -110,6 +110,11 @@
 				?>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col">
+				<?php comments_template(); ?>
+			</div>
+		</div>
 	</div>
 </div>
 
