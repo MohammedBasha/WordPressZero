@@ -80,9 +80,28 @@
 						<?php
 					}
 				}
-
-
 			?>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h5>
+					<?php the_author_meta('first_name'); ?> 
+					<?php the_author_meta('last_name'); ?> 
+					( <?php the_author_meta('nickname'); ?> )
+				</h5>
+				<p>
+					<?php
+						if (get_the_author_meta('description')) {
+							the_author_meta('description');
+						} else {
+							echo "There's no bio for ";
+					?>
+					<?php
+							the_author_meta('first_name');
+						}
+					?>
+				</p>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6 prev-link">
