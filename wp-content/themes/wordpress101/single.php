@@ -117,6 +117,28 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col">
+				<div class="user-profile-info">
+					<p class="user-posts-count">
+						<b><?php echo get_the_author_meta('nickname') ?></b> posts count: 
+						<span>
+							<?php
+								echo count_user_posts(get_the_author_meta('ID'));
+							?>
+						</span>
+					</p>
+					<p class="user-profile-link">
+						<b><?php echo get_the_author_meta('nickname') ?></b> profile link: 
+						<span>
+							<?php
+								the_author_posts_link();
+							?>
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-6 prev-link">
 				<?php
 					if (get_previous_post_link()) {
