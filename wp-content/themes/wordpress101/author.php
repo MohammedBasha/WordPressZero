@@ -72,16 +72,23 @@
 		</div>
 		<div class="row">
 			<?php
-				if (have_posts()) {
+				$author_posts_args = [
+					'author' => get_the_author_meta('ID'),
+					'posts_per_page' => 5
+				];
+
+				$author_posts = new WP_Query($author_posts_args);
+
+				if ($author_posts->have_posts()) {
 			?>
 				
 				<h3 class="col-md-12">
-					<?php the_author_meta('nickname'); ?> Posts:
+					Latest [<?php echo count_user_posts(get_the_author_meta('ID')) ?>] posts of <?php the_author_meta('nickname'); ?>:
 				</h3>
 
 			<?php
-				while (have_posts()) {
-					the_post();
+				while ($author_posts->have_posts()) {
+					$author_posts->the_post();
 
 					?>
 					<div class="col-sm-12">
@@ -149,40 +156,10 @@
 
 					<?php
 					}
+
+					wp_reset_postdata();
 				}
-
-
 			?>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 prev-link">
-				<?php
-					if (get_previous_posts_link()) {
-						previous_posts_link(
-							'
-								<i class="fa fa-3 fa-chevron-left" aria-hidden="true"></i>
-								<span> Previous Page</span>
-							'
-						);
-					} else {
-						echo 'No Previous Posts';
-					}
-				?>
-			</div>
-			<div class="col-sm-6 text-right prev-link">
-				<?php
-					if (get_next_posts_link()) {
-						next_posts_link(
-							'
-								<span>Next Page </span>
-								<i class="fa fa-3 fa-chevron-right" aria-hidden="true"></i>
-							'
-						);
-					} else {
-						echo 'No Next Posts';
-					}
-				?>
-			</div>
 		</div>
 	</div>
 
