@@ -123,7 +123,7 @@
 						<b><?php echo get_the_author_meta('nickname') ?></b> posts count: 
 						<span>
 							<?php
-								echo count_user_posts(get_the_author_meta('ID'));
+								echo (get_the_author_meta('ID'));
 							?>
 						</span>
 					</p>

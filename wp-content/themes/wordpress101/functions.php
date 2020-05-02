@@ -134,6 +134,8 @@ function add_custom_menu() {
 */
 
 function custom_excerpt_length($length) {
+	if (is_author())
+		return 5;
 	return 10;
 }
 
