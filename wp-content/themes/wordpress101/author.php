@@ -1,4 +1,4 @@
-<div class="author-page">
+<div class="main-content author-page">
 
 	<?php get_header(); ?>
 
@@ -158,6 +158,42 @@
 					}
 
 					wp_reset_postdata();
+				}
+			?>
+		</div>
+		<div class="row">
+			<?php
+
+				$comments_per_page = 6;
+				$comments_args = [
+					'user_id' => get_the_author_meta('ID'),
+					'status' => 'approve',
+					'number' => $comments_per_page,
+					'posts_status' => 'publish',
+					'post_type' => 'post'
+				];
+
+				$comments = get_comments($comments_args);
+
+				if ($comments) {
+					foreach($comments as $comment) {
+			?>
+						<div class="col-sm-12 comment">
+							<a href="<?php echo get_permalink($comment->comment_post_ID); ?>">
+								<?php echo get_the_title($comment->comment_post_ID); ?>
+							</a>
+							
+							<p>
+								<?php
+									echo 'Added on ' .
+									mysql2date('l, F j, Y', $comment->comment_date);
+								?>
+							</p>
+							<p><?php echo $comment->comment_content; ?></p>
+							<hr>
+						</div>
+			<?php
+					}
 				}
 			?>
 		</div>
