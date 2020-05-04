@@ -139,6 +139,11 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col">
+				<?php comments_template(); ?>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-6 prev-link">
 				<?php
 					if (get_previous_post_link()) {
@@ -165,8 +170,44 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
-				<?php comments_template(); ?>
+			<div class="col-sm-12">
+				<h4>Similar Posts</h4>
+			</div>
+			<div class="col-sm-12 random-posts">
+				<div class="row">
+					<?php
+						$random_posts_args = [
+							'posts_per_page' => 5,
+							'orderby' => 'rand',
+							'category__in' => wp_get_post_categories(get_queried_object_id()),
+							'post__not_in' => [get_queried_object_id()]
+						];
+
+						$random_posts = new WP_Query($random_posts_args);
+
+						if ($random_posts->have_posts()) {
+							while ($random_posts->have_posts()) {
+								$random_posts->the_post();
+
+						?>
+							
+							<div class="col-sm-6 col-md-3 col-lg-4">
+								<div class="main-post">
+									<h3 class="post-title">
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</h3>
+								</div>
+							</div>
+
+							<?php
+							}
+
+							wp_reset_postdata();
+						}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
