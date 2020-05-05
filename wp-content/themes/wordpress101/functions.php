@@ -147,5 +147,23 @@ function custom_excerpt_dots($more) {
 
 add_filter('excerpt_more', 'custom_excerpt_dots');
 
+/*
+* Numbering Pagination
+*/
+
+function numbering_pagination() {
+	global $wp_query; // Make the wp_query global
+	$all_pages = $wp_query->max_num_pages; // Get all posts
+	$current_page = max(1, get_query_var('paged')); // Get current page
+	if ($all_pages > 1) {
+		return paginate_links([
+			'base' => get_pagenum_link() . '%_%',
+			'formate' => '/page/%#%',
+			'current' => $current_page,
+			'mid_size' => 1
+		]);
+	}
+}
+
 
 ?>

@@ -83,9 +83,12 @@
 
 			?>
 		</div>
+		<!--
 		<div class="row">
 			<div class="col-sm-6 prev-link">
+			-->
 				<?php
+				/*
 					if (get_previous_posts_link()) {
 						previous_posts_link(
 							'
@@ -96,10 +99,14 @@
 					} else {
 						echo 'No Previous Posts';
 					}
+				*/
 				?>
+			<!--
 			</div>
 			<div class="col-sm-6 text-right prev-link">
+			-->
 				<?php
+				/*
 					if (get_next_posts_link()) {
 						next_posts_link(
 							'
@@ -110,7 +117,15 @@
 					} else {
 						echo 'No Next Posts';
 					}
+				*/
 				?>
+			<!--
+			</div>
+		</div>
+	-->
+		<div class="row">
+			<div class="col">
+				<?php echo numbering_pagination(); ?>
 			</div>
 		</div>
 	</div>
