@@ -7,20 +7,20 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<h1>From Header</h1>
-
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		  <div class="container">
-			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
-				<?php bloginfo('name'); ?>
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<?php add_custom_menu(); ?>
-
-		  </div>
-		</nav>
+		<div class="navbar-wrapper navbar-dark bg-dark">
+			<div class="container">
+				<div class="row">
+					<nav class="col navbar navbar-expand-lg">
+			  			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+							<?php bloginfo('name'); ?>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+			  			<?php add_custom_menu(); ?>
+					</nav>
+				</div>
+			</div>
+		</div>
 
 
