@@ -136,6 +136,8 @@ function add_custom_menu() {
 function custom_excerpt_length($length) {
 	if (is_author())
 		return 5;
+	if (is_category())
+		return 3;
 	return 10;
 }
 
