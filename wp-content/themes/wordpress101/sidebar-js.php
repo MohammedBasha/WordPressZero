@@ -20,6 +20,10 @@
 		$comments_count++;
 	}
 
+	// Get the Posts Count
+
+	$category_object = get_queried_object();
+	$posts_count = $category_object->count;
 ?>
 
 <div class="sidebar-wrapper sidebar-js">
@@ -31,7 +35,7 @@
 					<span>Comments count:</span> <?php echo $comments_count; ?>
 				</li>
 				<li>
-					<span>Articles count:</span>
+					<span>Articles count:</span> <?php echo $posts_count; ?>
 				</li>
 			</ul>
 		</div>
