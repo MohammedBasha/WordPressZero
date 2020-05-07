@@ -96,6 +96,9 @@
 			</div>
 			<div class="col-md-3 sidebar">
 				<?php
+
+					get_sidebar('js');
+
 					if (is_active_sidebar('main-sidebar')) {
 						dynamic_sidebar('main-sidebar');
 					} else {
