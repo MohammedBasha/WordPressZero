@@ -167,5 +167,23 @@ function numbering_pagination() {
 	}
 }
 
+/*
+* Custom Main Sidebar
+*/
+
+function custom_main_sidebar() {
+	register_sidebar([
+		'name' => 'Main Sidebar',
+		'id' => 'main-sidebar',
+		'description' => 'Custom Main Sidebar',
+		'class' => 'main-sidebar',
+		'before_widget' => '<div class="widget-content">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+	]);
+}
+
+add_action('widgets_init', 'custom_main_sidebar');
 
 ?>

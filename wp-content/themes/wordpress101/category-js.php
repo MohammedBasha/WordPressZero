@@ -95,7 +95,13 @@
 				?>
 			</div>
 			<div class="col-md-3 sidebar">
-				Sidebar here
+				<?php
+					if (is_active_sidebar('main-sidebar')) {
+						dynamic_sidebar('main-sidebar');
+					} else {
+						echo '<p>Sidebare Goes Here.</p>';
+					}
+				?>
 			</div>
 		</div>
 		<!--
