@@ -186,4 +186,11 @@ function custom_main_sidebar() {
 
 add_action('widgets_init', 'custom_main_sidebar');
 
+function custom_remove_paragraph($content) {
+	remove_filter('the_content', 'wpautop');
+	return $content;
+}
+
+add_filter('the_content', 'custom_remove_paragraph', 0);
+
 ?>
