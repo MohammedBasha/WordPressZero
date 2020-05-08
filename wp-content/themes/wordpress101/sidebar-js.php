@@ -72,9 +72,34 @@
 		</div>
 	</div>
 	<div class="widget">
-		<h3 class="widget-title">widget title</h3>
+		<h3 class="widget-title">Top post by comments</h3>
 		<div class="widget-content">
-			widget-content
+			<ul>
+				<?php
+					$top_posts_args = [
+						'posts_per_page' => 1,
+						'orderby' => 'comment_count'
+					];
+
+					$top_posts_query = new WP_Query($top_posts_args);
+
+					if ($top_posts_query->have_posts()) {
+
+						while ($top_posts_query->have_posts()) {
+							$top_posts_query->the_post();
+				?>
+							<li>
+								<a href="<?php echo the_permalink(); ?>"
+									title="<?php echo the_title(); ?>"
+								>
+									<?php echo the_title(); ?>
+								</a>
+							</li>
+				<?php
+						}
+					}
+				?>
+			</ul>
 		</div>
 	</div>
 </div>
