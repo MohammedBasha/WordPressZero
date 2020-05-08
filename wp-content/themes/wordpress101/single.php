@@ -1,6 +1,12 @@
 
 
-<?php get_header(); ?>
+<?php
+
+	get_header();
+
+	include(get_template_directory() . '\includes\breadcrumb.php'); // Include the BC
+
+?>
 
 
 <div class="main-content">
