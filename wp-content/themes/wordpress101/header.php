@@ -6,7 +6,16 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 		<?php wp_head(); ?>
 	</head>
-	<body>
+
+	<?php
+		if(is_home()) { // use is_front_page() if the homepage not the blog page
+			$home_body_class = array('homepage-custom');
+		} else {
+			$home_body_class = array('otherpage-custom');
+		}
+	?>
+
+	<body <?php body_class($home_body_class); ?>>
 		<div class="navbar-wrapper navbar-dark bg-dark">
 			<div class="container">
 				<div class="row">
