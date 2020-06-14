@@ -114,7 +114,7 @@ function register_custom_menu() {
 add_action('init', 'register_custom_menu');
 
 /*
-** Create a function to print the  custom menu
+** Create a function to print the custom menu
 */
 
 
