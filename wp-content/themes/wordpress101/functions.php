@@ -6,6 +6,9 @@ require_once 'class-wp-bootstrap-navwalker.php';
 // Adding the support to featured image
 add_theme_support('post-thumbnails');
 
+// Adding the support fort the Background Images
+add_theme_support('custom-background');
+
 /*
 ** Adding the custom style
 */
