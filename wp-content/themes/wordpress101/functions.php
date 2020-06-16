@@ -9,6 +9,9 @@ add_theme_support('post-thumbnails');
 // Adding the support fort the Background Images
 add_theme_support('custom-background');
 
+// Adding the support fort the Background Images
+add_theme_support('custom-header');
+
 /*
 ** Adding the custom style
 */

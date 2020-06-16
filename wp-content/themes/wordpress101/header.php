@@ -16,6 +16,10 @@
 	?>
 
 	<body <?php body_class($home_body_class); ?>>
+
+		<!-- Adding the Header Image code after selecting the image in the theme customization -->
+		<img alt="" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
+
 		<div class="navbar-wrapper navbar-dark bg-dark">
 			<div class="container">
 				<div class="row">
