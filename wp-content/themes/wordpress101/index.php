@@ -19,6 +19,10 @@
 										<?php the_title(); ?>
 									</a>
 								</h3>
+								<div class="post-format">
+									This is the post Format:
+									<?php echo get_post_format(); ?>
+								</div>
 								<div class="post-info">
 									<span class="post-author">
 										<i class="fa fa-user" aria-hidden="true"></i>

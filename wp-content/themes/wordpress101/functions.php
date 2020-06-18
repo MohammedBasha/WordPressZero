@@ -12,6 +12,12 @@ add_theme_support('custom-background');
 // Adding the support fort the Background Images
 add_theme_support('custom-header');
 
+// Adding the support fort the Background Images
+add_theme_support('custom-header');
+
+// Adding the support fort the Background Images
+add_theme_support('post-formats', array('aside', 'image', 'video'));
+
 /*
 ** Adding the custom style
 */
