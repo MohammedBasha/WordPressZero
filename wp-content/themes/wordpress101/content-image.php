@@ -2,7 +2,7 @@
 	<div class="main-post">
 		<h3 class="post-title">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+				This is the Image Post: <?php the_title(); ?>
 			</a>
 		</h3>
 		<div class="post-format">
